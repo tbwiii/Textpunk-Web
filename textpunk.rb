@@ -5,12 +5,16 @@ require "sass"
 
 module Textpunkweb
 
+	use Rack::Session::Pool
+
 	get '/' do
+		p CURRENT
+		session[:room] = CURRENT
    		redirect("/game")
 	end
-
+	
 	get '/game' do
-		erb :show_room, :locals => {:room => CURRENT}			
+		erb :show_room, :locals => {:room => session[:room]}			
 
 	end
 
@@ -18,9 +22,9 @@ module Textpunkweb
 
 		action = params[:action]
 
-		CURRENT.paths.each_key do |key|
+		session[:room].paths.each_key do |key|
 			if action.include? key
-				CURRENT = CURRENT.go(action)
+				session[:room] = session[:room].go(action)
 			end
 		end
 
