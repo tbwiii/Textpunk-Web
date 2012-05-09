@@ -1,3 +1,4 @@
+require_relative 'areas'
 require "sinatra"
 require "erb"
 require "sass"
@@ -31,8 +32,5 @@ module Textpunkweb
   		scss :screen
   	end
 
-  	get '/favicon.ico' do
-  		:favicon
-  	end
 
 end

@@ -1,0 +1,38 @@
+body {
+	background: #222;
+	color:#f1f1f1;
+	font-family: Helvetica, Arial, "MS Trebuchet", sans-serif;
+	font-size: 16px;
+
+	> .wrap {
+		width: 860px;
+		margin: 0 auto;
+		padding: 20px;
+		
+	}
+}
+
+h1 {
+	font-weight: normal;
+	font-size: 1.5em;
+	color: #999;
+}
+
+article {
+	line-height: 1.3em;
+	font-size: 1em;
+}
+
+input {
+	background: #333;
+	border: none;
+	font-size: 1.2em;
+	color: #fff;
+	width: 100%;
+
+	
+}
+
+input:focus {
+		outline: none
+	}
