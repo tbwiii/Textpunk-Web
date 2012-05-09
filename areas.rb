@@ -68,13 +68,16 @@ You just...die. Type "Retry" to try again
 
 closet.add_paths({
 	'door' => hall_back,
-	'die' => you_die
 })
 
 hall_back.add_paths({
 	'closet' => closet,
 	'back' => closet,
 	'walk' => hall_front
+	})
+
+hall_front.add_paths({
+	'walk' => hall_back
 	})
 
 you_die.add_paths({

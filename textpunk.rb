@@ -14,7 +14,11 @@ module Textpunkweb
 	end
 	
 	get '/game' do
-		erb :show_room, :locals => {:room => session[:room]}			
+		if !session[:room]
+			redirect("/")	
+		else
+			erb :show_room, :locals => {:room => session[:room]}
+		end			
 
 	end
 
@@ -25,9 +29,6 @@ module Textpunkweb
 		session[:room].paths.each_key do |key|
 			if action.include? key
 				session[:room] = session[:room].go(key)
-			
-			elsif action.include? 'die'
-				session[:room] = session[:room].go('die')
 			end
 		end
 
