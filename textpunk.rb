@@ -31,7 +31,7 @@ module Textpunkweb
 			end
 		end
 
-		redirect("/game")
+		erb :show_room, :locals => {:room => session[:room]}
 		
 	end
 
