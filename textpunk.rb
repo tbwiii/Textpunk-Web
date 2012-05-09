@@ -20,11 +20,14 @@ module Textpunkweb
 
 	post '/game' do
 
-		action = params[:action]
+		action = params[:action].downcase
 
 		session[:room].paths.each_key do |key|
 			if action.include? key
-				session[:room] = session[:room].go(action)
+				session[:room] = session[:room].go(key)
+			
+			elsif action.include? 'die'
+				session[:room] = session[:room].go('die')
 			end
 		end
 
