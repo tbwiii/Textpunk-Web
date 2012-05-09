@@ -1,2 +1,2 @@
-require 'textpunk.rb'
+require './textpunk'
 run Sinatra::Application
