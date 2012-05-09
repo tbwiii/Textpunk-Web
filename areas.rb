@@ -43,6 +43,22 @@ Of course you could just go back to sleep in the closet.
 </p>
 })
 
+hall_front = Area.new("Front of the Main Hallway",
+%q{
+	<p>
+		You're at the front end of the hallway.
+	</p>
+
+	<p>
+	There are four doors. They all have nice signs: "Crew Only", "Ballroom", "Guest Quarters", and "Leisure". 
+	</p>
+
+	<p>
+	There's also the closet door at the back of the hall. You'll have to walk to get there.
+	</p>
+
+	})
+
 you_die = Area.new("YOU DED",
 %q{
 <p>
@@ -54,6 +70,12 @@ closet.add_paths({
 	'door' => hall_back,
 	'die' => you_die
 })
+
+hall_back.add_paths({
+	'closet' => closet,
+	'back' => closet,
+	'walk' => hall_front
+	})
 
 you_die.add_paths({
 	'retry' => closet
