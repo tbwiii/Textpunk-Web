@@ -1,12 +1,13 @@
 <html>
-<head>
-	<title>Textpunk</title>
-	<link rel="stylesheet" href="/screen.css">
+	<head>
+		<title>Textpunk</title>
+		<link rel="stylesheet" href="/screen.css">
 
-</head>
-<body>
-	<div class="wrap">
-		<%= yield %>
-	</div> <!-- end wrapper div (body > .wrap) -->	
-</body>
+	</head>
+	<body>
+		<div class="wrap">
+			<%= yield %>
+			<p class="footer">&copy; <%= Time.now.strftime("%Y") %> <a href="http://github.com/tbwIII">Ted Waller</a></p>
+		</div> <!-- end wrapper div (body > .wrap) -->	
+	</body>
 </html>

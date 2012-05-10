@@ -10,6 +10,7 @@ module Textpunkweb
 	get '/' do
 		p CURRENT
 		session[:room] = CURRENT
+		session[:defaults] = DEFAULTS
    		redirect("/game")
 	end
 	
@@ -29,6 +30,12 @@ module Textpunkweb
 		session[:room].paths.each_key do |key|
 			if action.include? key
 				session[:room] = session[:room].go(key)
+			end
+		end
+
+		session[:defaults].paths.each_key do |key|
+				if action.include? key
+				session[:room] = session[:defaults].go(key)
 			end
 		end
 
