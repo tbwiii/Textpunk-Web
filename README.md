@@ -1,5 +1,5 @@
 # Textpunkweb
 
-a fun webapp while I lean ruby and sinatra
+An unfinished text adventure made with [Sinatra](http://www.sinatrarb.com/) - [textpunk.heroku.com](textpunk.heroku.com)
 
 
